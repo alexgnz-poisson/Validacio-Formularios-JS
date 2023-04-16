@@ -1,0 +1,72 @@
+HTML nos regala algunas herramientas para la validación de formularios. Una de ellas es el atributotype. 
+Este atributo hace validaciones, por ejemplo, type=email, que verifica si la estructura que fue escrita
+está en un formato válido.
+
+Utilizando el atributo typecon el valor date dentro delinput.
+El valor date nos permite elegir una fecha a partir de un calendario y también nos permite que números 
+sean puestos dentro de un campo. Este valor valida si la fecha agregada está en el formato correcto.
+
+El required , lo que hace es que si ese campo no se llena, no permitira enviar dicha informacion
+El type indica como su nombre lo dice que tipo sera, puede ser texto, email, password .
+
+Validacion Contraseñas
+El required minlength = "n" ,donde n se puede colocar la cantidad minima de caracteres , usualmente se usa 
+para las contraseñas
+El required maxlength = "n",donde n se puede colocar la cantidad maxima de caracteres, usualmente se usa para
+las contraseñas.
+
+Para ciertas propiedad de la contraseña se utiliza lo siguiente 
+Pattern usa expresiones regulares para las contraseñas por ejemplo 
+required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+
+Lo que se tiene dentro del pattern , primero es ?= esto que acepta carecteres el . hace que no acepte saltos 
+de linea o enters, el * tiene que venir al menos una vez, desde la a hasta la z, el otro .* hace lo mismo 
+pero ahora de la A hasta la Z , el tercero es del 0 al 9 para poder aceptar numeros y el utimo que tenemos
+le estamos diciendo practicamente que no aceptaremos saltos de linea, espacios en blancos, por ultimo 
+queremos que se cumplan estas reglas entre 6 a 12 veces 
+
+En la contraseña despues del caracter especial, agregamos un tittle que practicamente lo que hara es que si el 
+usuario no cumple con los requisitos le aparecera un mensaje con informacion que le diga como rellenar ese campo
+
+Validacion Fechas nacimiento
+
+Se usa type = "date" y se usara js 
+
+Uso de regex 
+Tenemos que recordar que una regex puede estar formada por diversas reglas, entender partes de la escritura de algunas 
+de estas expresiones puede facilitar el entendimiento en la hora de escribir tus propias reglas.
+
+¿Cómo adicionar un mensaje customizado de error para validaciones que no estén en los padrones de HTML?
+input.setCustomValidity('Mensaje customizado de error')
+Vamos a usar una función del input setCustomValidity() para definir un mensaje de error customizado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mensajes del Navegador 
+Cuando existe algún error de validación en el formulario aparecerá un mensaje arriba del campo explicando o dando 
+algún tip para corregirlo. Pero en el proyecto existe una estilización y una tag <span> para enseñar un mensaje de 
+error directo en el HTML.
+
+La estilización del mensaje padrón puede cambiar de navegador a navegador.
+Los navegadores tienes diferentes formas de implementar las estilizaciones de sus mensajes de error y esa inconsistencia 
+puede impactar en decisiones importantes para el equipo de diseño.
+
+El idioma en el cual se enseña el mensaje puede cambiar de navegador a navegador.
+Dependiendo del idioma que el navegador fue instalado los mensajes de error pueden venir de acuerdo con ese idioma. El 
+problema es que los mensajes de errores customizados no son traducidos, lo que causa inconsistencia de la información.
+
+La estilización del mensaje padrón no puede ser alterada.
+No existe una manera de estilizar el mensaje padrón del navegador. La estilización es implementada por el mismo
